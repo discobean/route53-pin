@@ -1,4 +1,4 @@
-# ebs-pin
+# route53-pin
 Pin Route53 internal DNS entries to an instance
 ````
 pip install route53-pin
