@@ -51,9 +51,9 @@ Your EC2 instance needs to have an IAM profile that can update route53.  Here is
             ],
             "Effect": "Allow",
             "Principal": {
-            "Service": [
-                "ec2.amazonaws.com"
-            ]
+                "Service": [
+                    "ec2.amazonaws.com"
+                ]
             }
         }
         ]
@@ -62,14 +62,14 @@ Your EC2 instance needs to have an IAM profile that can update route53.  Here is
         {
         "PolicyDocument": {
             "Statement": [
-            {
-                "Action": [
-                    "route53:ChangeResourceRecordSets",
-                    "route53:ListHostedZonesByName"
-                ],
-                "Effect": "Allow",
-                "Resource": "*"
-            }
+                {
+                    "Action": [
+                        "route53:ChangeResourceRecordSets",
+                        "route53:ListHostedZonesByName"
+                    ],
+                    "Effect": "Allow",
+                    "Resource": "*"
+                }
             ]
         },
         "PolicyName": "Route53"
@@ -77,4 +77,5 @@ Your EC2 instance needs to have an IAM profile that can update route53.  Here is
     ]
     },
 }
+
 ````
