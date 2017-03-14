@@ -3,9 +3,8 @@ from setuptools import setup
 
 setup(
     name='route53-pin',
-    version='0.0.1',
+    version='0.0.2',
     scripts=['route53-pin'],
-    packages=['route53-pin'],
     url='https://github.com/discobean/route53-pin',
     description='Pin internal route53 DNS entry to EC2 instance',
     install_requires=[
@@ -23,4 +22,3 @@ setup(
         'six==1.10.0'],
     keywords='route53 route53pin route53-pin'
 )
-
