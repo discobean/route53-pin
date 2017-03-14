@@ -22,15 +22,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if not args.address:
-        #args.address = requests.get('http://169.254.169.254/latest/meta-data/local-ipv4')
-        args.address = '10.124.2.81'
+        args.address = requests.get('http://169.254.169.254/latest/meta-data/local-ipv4')
 
     if not args.hostname:
         args.hostname = socket.gethostname()
 
     if not args.zone:
-        #ec2_hostname = requests.get('http://169.254.169.254/latest/meta-data/hostname')
-        ec2_hostname = 'ip-10-124-2-81.p.ah'
+        ec2_hostname = requests.get('http://169.254.169.254/latest/meta-data/hostname')
 
         # The DNS zone that the instance belongs to
         matches = re.match("[^\.]+\.(.*)", ec2_hostname)
