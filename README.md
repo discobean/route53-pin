@@ -36,3 +36,45 @@ python setup.py sdist
 twine upload dist/*
 ````
 
+## AWS Permissions
+Your EC2 instance needs to have an IAM profile that can update route53.  Here is a template:
+
+````
+"Ec2Role": {
+    "Type": "AWS::IAM::Role"
+    "Properties": {
+    "AssumeRolePolicyDocument": {
+        "Statement": [
+        {
+            "Action": [
+                "sts:AssumeRole"
+            ],
+            "Effect": "Allow",
+            "Principal": {
+            "Service": [
+                "ec2.amazonaws.com"
+            ]
+            }
+        }
+        ]
+    },
+    "Policies": [
+        {
+        "PolicyDocument": {
+            "Statement": [
+            {
+                "Action": [
+                    "route53:ChangeResourceRecordSets",
+                    "route53:ListHostedZonesByName"
+                ],
+                "Effect": "Allow",
+                "Resource": "*"
+            }
+            ]
+        },
+        "PolicyName": "Route53"
+        }
+    ]
+    },
+}
+````
