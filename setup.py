@@ -17,7 +17,7 @@ setup(
         'packaging==16.8',
         'pyparsing==2.2.0',
         'python-dateutil==2.6.0',
-        'requests==2.20.0',
+        'requests==2.31.0',
         's3transfer==0.1.10',
         'six==1.10.0'],
     keywords='route53 route53pin route53-pin'
